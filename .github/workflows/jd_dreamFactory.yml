@@ -6,7 +6,7 @@ name: jd_dreamFactory
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 ? * * *'
   watch:
     types: started
   repository_dispatch:
@@ -37,7 +37,7 @@ jobs:
           npm install
       - name: '运行 【京东京喜梦工厂】'
         run: |
-          node jd_818.js
+          node jd_dreamFactory.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

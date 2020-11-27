@@ -37,7 +37,7 @@ jobs:
           npm install
       - name: '运行 【天天提鹅】'
         run: |
-          master jd_daily_egg.js
+          node jd_daily_egg.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

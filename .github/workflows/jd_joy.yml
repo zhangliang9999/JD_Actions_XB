@@ -4,7 +4,7 @@
 name: jd_joy
 
 on:
-  push:
+  pull_request:
     branches: [ master ]
   workflow_dispatch:
   schedule:

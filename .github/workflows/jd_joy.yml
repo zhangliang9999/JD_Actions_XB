@@ -4,8 +4,6 @@
 name: jd_joy
 
 on:
-  pull_request:
-    branches: [ master ]
   workflow_dispatch:
   schedule:
     - cron: '0 0,1,4,10,15,16 * * *'
@@ -22,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: lxk0301/jd_scripts
+          repository: ZHANGLIANGZHANGLIANG/jd_scripts-1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:

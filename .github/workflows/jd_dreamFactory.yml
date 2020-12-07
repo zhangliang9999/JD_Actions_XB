@@ -22,6 +22,7 @@ jobs:
         with:
           repository: ZHANGLIANGzhangliang/jd_scripts-1
           ref: master
+          ref: master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:

@@ -53,5 +53,5 @@ jobs:
           jdSuperMarketUpgrade: ${{ secrets.SUPERMARKET_UPGRADE }}
           jdBusinessCircleJump: ${{ secrets.BUSINESS_CIRCLE_JUMP }}
           SUPERMARKET_SHARECODES: ${{ secrets.SUPERMARKET_SHARECODES }}
-          drawLotteryFlag: ${{ secrets.SUPERMARKET_LOTTERY }}
           MARKET_REWARD_NOTIFY: ${{ secrets.MARKET_REWARD_NOTIFY }}
+          jdSuperMarketLottery: ${{ secrets.SUPERMARKET_LOTTERY }}

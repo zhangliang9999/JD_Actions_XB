@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: sync-ZHANGLIANGzhangliang-JD_Actions
+name: repo-sync
 on:
   schedule:
     - cron: '1 4,10,16,22 * * *'
@@ -9,7 +9,7 @@ on:
   push:
     branches: [ master ]
   repository_dispatch:
-    types: sync-ZHANGLIANGzhangliang-JD_Actions
+    types: repo-sync
 jobs:
   repo-sync:
     env:

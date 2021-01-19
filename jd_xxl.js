@@ -13,11 +13,14 @@
 [task_local]
 #东东爱消除
 0 * * * * https://raw.githubusercontent.com/shylocks/Loon/main/jd_xxl.js, tag=东东爱消除, img-url=https://raw.githubusercontent.com/yogayyy/Scripts/main/Icon/shylocks/jd_xxl.jpg, enabled=true
+
 ================Loon==============
 [Script]
 cron "0 * * * *" script-path=https://raw.githubusercontent.com/shylocks/Loon/main/jd_xxl.js,tag=东东爱消除
+
 ===============Surge=================
 东东爱消除 = type=cron,cronexp="0 * * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/shylocks/Loon/main/jd_xxl.js
+
 ============小火箭=========
 东东爱消除 = type=cron,script-path=https://raw.githubusercontent.com/shylocks/Loon/main/jd_xxl.js, cronexpr="0 * * * *", timeout=200, enable=true
  */
@@ -30,8 +33,8 @@ let exchangeName = $.isNode() ? (process.env.EXCHANGE_EC ? process.env.EXCHANGE_
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let inviteCodes = [
-  '840266@2585219@2586018@1556311@2583822@2585256',
-  '840266@2585219@2586018@1556311@2583822@2585256',
+  '1589335@868853@2802269',
+  '1589335@868853@2802269',
 ]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -226,6 +229,14 @@ function checkLogin() {
             console.log(`当前体力：${$.strength}`)
             // console.log(JSON.stringify(data))
             $.curLevel = data.role.gameInfo.levelId || 40103
+            $.not3Star = []
+            for(let level of data.role.allLevels){
+              if(level.maxStar!==3){
+                $.not3Star.push(level.id)
+              }
+            }
+            if($.not3Star.length)
+              console.log(`当前尚未三星的关卡为：${$.not3Star.join(',')}`)
             // SecrectUtil.InitEncryptInfo($.gameToken, $.gameId)
           }
         }
@@ -260,6 +271,14 @@ function getTaskList() {
                   console.log(`当前关卡：${$.level}`)
                   while ($.strength >= 5 && $.level <= 240) {
                     await beginLevel()
+                  }
+                  if($.not3Star.length && $.strength >= 5){
+                    console.log(`去完成尚未三星的关卡`)
+                    for(let level of $.not3Star){
+                      $.level = parseInt(level)
+                      await beginLevel()
+                      if($.strength<5) break
+                    }
                   }
                 } else if (task.res.sName === "逛逛店铺") {
                   if (task.state.iFreshTimes < task.res.iFreshTimes)

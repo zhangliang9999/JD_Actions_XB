@@ -2,7 +2,7 @@
 name: repo-sync
 on:
   schedule:
-    - cron: '1 4,10,16,22 * * *'
+    - cron: '40 * * * *'
   workflow_dispatch:
   watch:
     types: started

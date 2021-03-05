@@ -6,7 +6,7 @@ name: jd_joy_reward
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/1 15,16,23,0,3,4,7,8* * *'
+    - cron: '44,45,46 15,23,3,7 * * *'
   watch:
     types: started
   repository_dispatch:

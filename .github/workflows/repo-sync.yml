@@ -21,7 +21,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync ZHANGLIANGzhangliang-JD_Actions
+      - name: sync ZHANGLIANGzhangliang-zhangl
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:

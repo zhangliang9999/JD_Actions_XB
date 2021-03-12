@@ -50,4 +50,5 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           CFD_NOTIFY_CONTROL: ${{ secrets.CFD_NOTIFY_CONTROL }}
+          JDCFD_SHARECODES: ${{ secrets.JDCFD_SHARECODES }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
